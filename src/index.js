@@ -5,7 +5,7 @@ import {app} from './app.js'
 
 
 dotenv.config({
-    path: './env'
+    path: './.env'
 })
 
 
@@ -22,10 +22,14 @@ connectDB()
 
 
 /*
+
+!Note -> rather than written or connecting the database in the indexfile we will write it in another file and then import it here 
+
 import express from "express"
 const app = express()
 
-( async()=>{
+the below semi-colon is for safety purpose
+;( async()=>{
     try {
         await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`)
         app.on("error", (error)=>{
