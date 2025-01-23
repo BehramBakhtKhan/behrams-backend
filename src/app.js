@@ -16,6 +16,8 @@ app.use(express.urlencoded({extended: true, limit: "16kb"}))
 app.use(express.static("public"))
 app.use(cookieParser())
 
+// The order of app.use calls matters in Express. Current order is correct as parsing middleware typically comes before routing.
+
 // routes
 import userRouter from "./routes/user.routes.js"
 
