@@ -109,7 +109,7 @@ const loginUser = asyncHandler(async (req, res) =>{
     console.log(email);
 
     if (!username && !email) {
-        throw new ApiError(400, "username or email is required")
+        throw new ApiError(400, "username and email are required")
     }
     
     // Here is an alternative of above code based on logic discussed in video:
@@ -331,7 +331,7 @@ const updateUserCoverImage = asyncHandler(async(req, res) => {
     const coverImage = await uploadOnCloudinary(coverImageLocalPath)
 
     if (!coverImage.url) {
-        throw new ApiError(400, "Error while uploading on avatar")
+        throw new ApiError(400, "Error while uploading on coverImage")
         
     }
 
